@@ -3,6 +3,7 @@ const forecastContainer = document.querySelector(".forecast-cards");
 const searchBox = document.getElementById("searchBox");
 const locationElement = document.querySelector(".userlocation");
 const allBars = document.querySelectorAll(".clock");
+const cityContainer = document.querySelector(".city-items");
 console.log(allBars);
 // *----Global Variables ----
 const apiKey = "ccfb4b43ed9148a3ab2230152240601";
@@ -10,7 +11,8 @@ const baseUrl = "http://api.weatherapi.com/v1/forecast.json";
 ("http://api.weatherapi.com/v1/forecast.json?key=ccfb4b43ed9148a3ab2230152240601&q=London&days=3");
 let myLocation = "cairo";
 let allDaysArr = [];
-
+let imgsresultsobj = {};
+let allImgs = [];
 // &----Functions ----
 async function getWeather(location) {
   let response = await fetch(`${baseUrl}?key=${apiKey}&q=${location}&days=7`);
@@ -20,6 +22,7 @@ async function getWeather(location) {
 
   locationElement.innerHTML = `${data.location.name}, ${data.location.country}`;
   displayWeather();
+  getCityImage(data.location.name);
 }
 function getuserLocation(currentLocation) {
   myLocation = `${currentLocation.coords.latitude},${currentLocation.coords.longitude}`;
@@ -92,11 +95,34 @@ function displayRainInfo(cardRainInfo) {
     ).style.width = `${cardRainInfo.hour[dayHour].chance_of_rain}%`;
   }
 }
-// displayWeather();
+async function getCityImage(city) {
+  let response = await fetch(
+    `https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=maVgNo3IKVd7Pw7-_q4fywxtQCACntlNXKBBsFdrBzI&per_page=1&orientation=landscape`
+  );
+  imgsresultsobj = await response.json();
+  console.log(imgsresultsobj);
+  allImgs = imgsresultsobj.results;
+  console.log(allImgs);
+
+  let itemContent = `
+  <div class="city-item ">
+    <div class="city-image">
+      <img src="${allImgs[0].urls.regular}" alt="Image for ${city} city" />
+    </div>
+    <div class="city-name"><span class="city-name">${city}</span></div>
+  </div>
+`;
+  cityContainer.innerHTML += itemContent;
+}
 // !----Events ----
 window.addEventListener("load", () => {
   navigator.geolocation.getCurrentPosition(getuserLocation);
 });
-searchBox.addEventListener("input", () => {
-  getWeather(searchBox.value);
+// searchBox.addEventListener("blur", () => {
+//   getWeather(searchBox.value);
+// });
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    getWeather(searchBox.value);
+  }
 });
