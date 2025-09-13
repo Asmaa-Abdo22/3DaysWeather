@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- &-----Fav Icon ---- -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!--& SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- & AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- &-----Font Awesome css---- -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- &----Bootstrap css ---- -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- &-----Main css ---- -->
+    <link rel="stylesheet" href="./css/stylee.css">
+</head>
+
+<body>
+    <main class="interface" id="interface">
+        <div class="container">
+            <header class="mt-2 py-3 px-2 d-flex justify-content-between align-items-center">
+                <div class="location  d-flex align-items-center gap-2 ">
+                    <i class="fa-solid fa-location-dot "></i>
+                    <p class=" m-0 fw-bold fs-6 userlocation"></p>
+                </div>
+                <div class="search-bar  d-flex align-items-center gap-2 w-50">
+                    <i class="fa-solid fa-magnifying-glass "></i>
+                    <input type="text" name="search" placeholder="Search city..." id="searchBox" spellcheck="false"
+                        autocomplete="off" class=" form-control w-100 " />
+                </div>
+            </header>
+
+            <section class="forecast row my-4 justify-content-between">
+                <div class="forecast-data col-md-8 ">
+                    <h2>Weather</h2>
+                    <div class="forecast-cards"></div>
+                </div>
+
+                <div class="rain-chance mt-5 col-md-3">
+                    <h3>Chance of rain</h3>
+                    <div class="rain-day-hours">
+                        <div class="clock" data-clock="9">
+                            <div class="bar">
+                                <div class="percent"></div>
+                            </div>
+                            <p>9 Am</p>
+                        </div>
+                        <div class="clock" data-clock="11">
+                            <div class="bar">
+                                <div class="percent"></div>
+                            </div>
+                            <p>11 Am</p>
+                        </div>
+                        <div class="clock" data-clock="15">
+                            <div class="bar">
+                                <div class="percent"></div>
+                            </div>
+                            <p>3 PM</p>
+                        </div>
+                        <div class="clock" data-clock="19">
+                            <div class="bar">
+                                <div class="percent"></div>
+                            </div>
+                            <p>7 PM</p>
+                        </div>
+                        <div class="clock" data-clock="22">
+                            <div class="bar">
+                                <div class="percent"></div>
+                            </div>
+                            <p>10 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-cities row mb-5">
+                <div class="recent-header">
+                    <h2>Recent Cities</h2>
+                    <button>Clear All <i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <div class="city-items"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class=" fixed-bottom  text-white">
+        <div class="container py-3 text-center">
+            <p class=" m-0 fs-6 ">
+                Made with <i class="fa-solid fa-heart fa-beat mx-1 text-danger"></i> by
+                <a href="https://www.linkedin.com/in/asmaa-abdo" class="text-decoration-none fw-bold d-inline-block "
+                    target="_blank">Asmaa Abdo </a> @2025
+            </p>
+        </div>
+    </footer>
+    <!--& SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--& AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: false
+            });
+        });
+    </script>
+    <!-- &----Bootstrap Js ---- -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- &----Main Js  ---- -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
