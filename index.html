@@ -23,7 +23,7 @@
 <body>
     <main class="interface" id="interface">
         <div class="container">
-            <header class="mt-2 py-3 px-2 d-flex justify-content-between align-items-center">
+            <header class="mt-2 py-3 px-2 d-flex justify-content-between align-items-center" data-aos="fade-down" data-aos-duration="800">
                 <div class="location  d-flex align-items-center gap-2 ">
                     <i class="fa-solid fa-location-dot "></i>
                     <p class=" m-0 fw-bold fs-6 userlocation"></p>
@@ -36,39 +36,39 @@
             </header>
 
             <section class="forecast row my-4 justify-content-between">
-                <div class="forecast-data col-md-8 ">
+                <div class="forecast-data col-md-8 " data-aos="fade-right" data-aos-delay="200">
                     <h2>Weather</h2>
                     <div class="forecast-cards"></div>
                 </div>
 
-                <div class="rain-chance mt-5 col-md-3">
+                <div class="rain-chance mt-5 col-md-3" data-aos="fade-left" data-aos-delay="400">
                     <h3>Chance of rain</h3>
                     <div class="rain-day-hours">
-                        <div class="clock" data-clock="9">
+                        <div class="clock" data-clock="9" data-aos="fade-up" data-aos-delay="100">
                             <div class="bar">
                                 <div class="percent"></div>
                             </div>
                             <p>9 Am</p>
                         </div>
-                        <div class="clock" data-clock="11">
+                        <div class="clock" data-clock="11" data-aos="fade-up" data-aos-delay="200">
                             <div class="bar">
                                 <div class="percent"></div>
                             </div>
                             <p>11 Am</p>
                         </div>
-                        <div class="clock" data-clock="15">
+                        <div class="clock" data-clock="15" data-aos="fade-up" data-aos-delay="300">
                             <div class="bar">
                                 <div class="percent"></div>
                             </div>
                             <p>3 PM</p>
                         </div>
-                        <div class="clock" data-clock="19">
+                        <div class="clock" data-clock="19" data-aos="fade-up" data-aos-delay="400">
                             <div class="bar">
                                 <div class="percent"></div>
                             </div>
                             <p>7 PM</p>
                         </div>
-                        <div class="clock" data-clock="22">
+                        <div class="clock" data-clock="22" data-aos="fade-up" data-aos-delay="500">
                             <div class="bar">
                                 <div class="percent"></div>
                             </div>
@@ -79,16 +79,17 @@
             </section>
 
             <section class="recent-cities  mb-5">
-                <div class="recent-header">
+                <div class="recent-header" data-aos="fade-up">
                     <h2>Recent Cities</h2>
-             
                 </div>
-                <div class="city-items row row-cols-md-4"></div>
+                <div class="city-items row row-cols-md-4">
+                    <!-- These would be populated dynamically -->
+                </div>
             </section>
         </div>
     </main>
 
-    <footer class=" fixed-bottom  text-white">
+    <footer class=" fixed-bottom  text-white" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="container py-3 text-center">
             <p class=" m-0 fs-6 ">
                 Made with <i class="fa-solid fa-heart fa-beat mx-1 text-danger"></i> by
