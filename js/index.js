@@ -8,7 +8,7 @@ console.log(allBars);
 
 // *----Global Variables ----
 const apiKey = "ccfb4b43ed9148a3ab2230152240601";
-const baseUrl = "http://api.weatherapi.com/v1/forecast.json";
+const baseUrl = "https://api.weatherapi.com/v1/forecast.json";
 ("http://api.weatherapi.com/v1/forecast.json?key=ccfb4b43ed9148a3ab2230152240601&q=London&days=3");
 let myLocation = "cairo";
 let allDaysArr = [];
