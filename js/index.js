@@ -17,7 +17,7 @@ let allImgs = [];
 
 // &----Functions ----
 async function getWeather(location) {
-  let response = await fetch(`${baseUrl}?key=${apiKey}&q=${location}&days=7`);
+  let response = await fetch(`${baseUrl}?key=${apiKey}&q=${location}&days=3`);
   let data = await response.json();
   console.log(data);
   allDaysArr = data.forecast.forecastday;
