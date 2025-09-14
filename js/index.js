@@ -119,7 +119,7 @@ function displayRainInfo(cardRainInfo) {
 async function getCityImage(city) {
   try {
     let response = await fetch(
-      `https://api.unsplash.com/search/photos?page=1&query=${city}&client_id=maVgNo3IKVd7Pw7-_q4fywxtQCACntlNXKBBsFdrBzI&per_page=1&orientation=landscape`
+      `http://api.unsplash.com/search/photos?page=1&query=${city}&client_id=maVgNo3IKVd7Pw7-_q4fywxtQCACntlNXKBBsFdrBzI&per_page=1&orientation=landscape`
     );
     if (!response.ok) return;
     imgsresultsobj = await response.json();
